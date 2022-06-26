@@ -1,0 +1,39 @@
+@import 'variables';
+@import 'extensions';
+
+.about {
+  @extend %section;
+  background-color: $grayBG;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    max-width: 485px;
+    font-family: $mediumFont;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin: 0 0 3rem 0;
+    &:last-of-type {
+      margin-bottom: 107px;
+    }
+  }
+}
+
+@media (max-width: 501px) {
+  .about {
+    &__header {
+      margin-top: 81px;
+    }
+    p {
+      &:last-of-type {
+        margin-bottom: 81px;
+      }
+    }
+  }
+}

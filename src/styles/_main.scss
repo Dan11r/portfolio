@@ -1,0 +1,49 @@
+@import 'variables';
+@import 'extensions';
+
+@font-face {
+  font-family: 'Gilroy-bold';
+  src: url(./../fonts/Gilroy-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Gilroy-medium';
+  src: url(./../fonts/Gilroy-Medium.ttf);
+}
+body.--scrolling-lock {
+  overflow: hidden;
+}
+
+h2 {
+  color: $black;
+  font-family: $boldFont;
+  font-size: 34px;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-top: 91px;
+  margin-bottom: 69px;
+}
+.container {
+  max-width: 940px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 10px 0 10px;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 501px) {
+  section {
+    margin-bottom: 0 !important;
+  }
+  h2 {
+    margin-top: 80px;
+  }
+}

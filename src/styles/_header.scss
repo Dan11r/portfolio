@@ -1,0 +1,135 @@
+@import 'variables';
+@import 'extensions';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 87px;
+  background-color: #fff;
+  z-index: 100;
+  .nav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  &__link {
+    list-style-type: none;
+  }
+  .--active {
+    color: $black;
+  }
+  a {
+    text-decoration: none;
+    background-color: #fff;
+    color: $grayText;
+    font-size: 18px;
+    line-height: 22px;
+    font-family: $boldFont;
+  }
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    .nav {
+      position: absolute;
+      top: 0;
+      left: -200%;
+      width: 100%;
+      min-height: 100vh;
+      background-color: #fff;
+      padding: 66px 28px 57px 26px;
+      overflow: auto;
+      transition: left 0.3s ease 0s;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 5rem;
+
+      &--active {
+        left: 0;
+      }
+    }
+
+    a {
+      line-height: 0;
+      font-size: 34px;
+    }
+
+    .menu-icon {
+      z-index: 100;
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 27px;
+      width: 30px;
+      height: 18px;
+      overflow: hidden;
+      cursor: pointer;
+
+      &::after,
+      &::before,
+      span {
+        left: 0;
+        position: absolute;
+        height: 10%;
+        width: 100%;
+        transition: all 0.3s ease 0s;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -ms-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        background-color: $grayText;
+      }
+      &::before,
+      &::after {
+        content: '';
+      }
+      &::before {
+        top: 0;
+      }
+      &::after {
+        bottom: 0;
+      }
+      span {
+        top: 50%;
+        transform: translateY(-50%);
+        transform: scale(1);
+      }
+      &--active {
+        span {
+          transform: scale(0);
+        }
+        &::before {
+          top: 50%;
+          transform: translateX(-50%);
+          transform: rotate(-44deg);
+        }
+        &::after {
+          bottom: 50%;
+          transform: translateX(50%);
+          transform: rotate(44deg);
+        }
+      }
+    }
+
+    ul {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      height: 350px;
+      padding: 0 0 7rem 26px;
+    }
+  }
+}
